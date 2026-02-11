@@ -1,73 +1,85 @@
-# React + TypeScript + Vite
+![Imagem do logotipo PizzaShop e duas telas da página inicial da aplicação](.github/cover-pizzashop.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🍕 PizzaShop
 
-Currently, two official plugins are available:
+O **PizzaShop** é um dashboard robusto para administração e gerenciamento de pedidos de delivery. Desenvolvido durante o curso de Desenvolvimento Full Stack da **Rocketseat**, o projeto foca em fornecer métricas detalhadas e controle total sobre o fluxo de pedidos de um restaurante.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A aplicação utiliza estratégias de cache para otimizar requisições, reduzindo o consumo de recursos da API e elevando a performance da experiência do usuário. Além disso, conta com uma suíte completa de testes unitários e E2E.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Tecnologias
 
-## Expanding the ESLint configuration
+O projeto foi construído com o que há de mais moderno no ecossistema React:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* **Core:** React 18, TypeScript, Vite.
+* **Data Fetching:** TanStack Query (React Query) & Axios.
+* **Forms & Validation:** React Hook Form & Zod.
+* **Styling:** Tailwind CSS & Radix UI (via Shadcn/UI).
+* **Charts:** Recharts.
+* **Testing:** Playwright (E2E) & Vitest.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📋 Funcionalidades
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **Gestão de Perfil:** Registro e atualização das informações do restaurante.
+- **Controle de Pedidos:** Listagem, aprovação, envio, conclusão e cancelamento de pedidos.
+- **Detalhamento:** Visualização completa dos itens do pedido e dados do cliente.
+- **Business Intelligence:** Dashboards com métricas de desempenho e gráficos de faturamento.
+- **Confiabilidade:** Testes automatizados para garantir o funcionamento das regras de negócio.
+
+---
+
+## 🔧 Instalação e Execução
+
+### 1. Requisitos Prévios
+Certifique-se de ter a API do projeto rodando. Você pode acessá-la aqui:  
+🔗 -
+
+### 2. Clonar e Instalar
+```bash
+# Clonar o repositório
+git clone [https://github.com/KaikMcpe12/pizzashop.git](https://github.com/KaikMcpe12/pizzashop.git)
+
+# Acessar a pasta
+cd pizzashop
+
+# Instalar dependências
+npm install
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 3. Configuração de Variáveis
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Crie os arquivos `.env.local` e `.env.test` na raiz do projeto:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```env
+VITE_API_URL="http://localhost:3333"
+VITE_ENABLE_API_DELAY=false
+
 ```
+
+### 4. Rodar o Projeto
+
+```bash
+# Iniciar servidor de desenvolvimento
+npm run dev
+
+# Rodar testes unitários
+npm run test
+
+# Rodar testes E2E
+npm run test:e2e
+
+```
+
+---
+
+## 🔑 Acesso ao Painel
+
+1. Acesse: `http://localhost:5173/sign-in`
+2. Utilize o e-mail: `admin@admin.com`
+3. **Fluxo de Login:** A aplicação utiliza **Magic Links**. Após solicitar o login, verifique o **terminal da API**, copie a URL gerada e cole no seu navegador.
+
+---
