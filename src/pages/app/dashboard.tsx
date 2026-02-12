@@ -1,9 +1,9 @@
-import { Helmet } from 'react-helmet-async'
+import { PageTitle } from '../components/page-title'
 
 export function Dashboard() {
   return (
     <>
-      <Helmet title="Dashboard" />
+      <PageTitle title="Dashboard" />
       <h1>Dashboard</h1>
     </>
   )
