@@ -35,7 +35,7 @@ O projeto foi construído com o que há de mais moderno no ecossistema React:
 
 ### 1. Requisitos Prévios
 Certifique-se de ter a API do projeto rodando. Você pode acessá-la aqui:  
-🔗 -
+🔗 - [https://github.com/rocketseat-education/pizzashop-api](https://github.com/rocketseat-education/pizzashop-api)
 
 ### 2. Clonar e Instalar
 ```bash
