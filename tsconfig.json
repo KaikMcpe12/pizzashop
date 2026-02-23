@@ -1,5 +1,9 @@
 {
   "files": [],
+  "include": [
+    "src",
+    "test",
+  ],
   "references": [
     {
       "path": "./tsconfig.app.json"
@@ -15,13 +19,14 @@
         "./src/*"
       ],
     },
-    "types": [
-      "vitest/globals"
-    ],
     "typeRoots": [
       "./types",
       "./node_modules/@types",
       "./node_modules"
+    ],
+    "types": [
+      "@testing-library/jest-dom/vitest",
+      "vitest/globals"
     ],
   },
 }
