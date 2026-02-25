@@ -3,7 +3,7 @@ import { api } from '@/lib/axios'
 export interface GetManagedRestaurantResponse {
   id: string
   name: string
-  role: 'manager' | 'customer'
+  role?: 'manager' | 'customer'
   createdAt: Date | null
   updatedAt: Date | null
   description: string | null
