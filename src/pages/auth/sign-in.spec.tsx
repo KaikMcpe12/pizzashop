@@ -10,13 +10,15 @@ import { SignIn } from './sign-in'
 describe('Sign in', () => {
   it('should set default email input value if email is present on search params', () => {
     const wrapper = render(
-      <MemoryRouter initialEntries={['/sign-in?email=johndoe@example.com']}>
+      <MemoryRouter initialEntries={['/sign-in?email=john.doe@example.com']}>
         <QueryClientProvider client={queryClient}>
           <SignIn />
         </QueryClientProvider>
       </MemoryRouter>,
     )
 
-    expect(wrapper.getByDisplayValue('johndoe@example.com')).toBeInTheDocument()
+    expect(
+      wrapper.getByDisplayValue('john.doe@example.com'),
+    ).toBeInTheDocument()
   })
 })
