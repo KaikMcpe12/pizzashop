@@ -33,24 +33,26 @@ export const getOrderMock = http.get<never, never, GetOrdersResponse>(
       ? Number(searchParams.get('pageIndex'))
       : 0
 
-    const customerName = searchParams.get('customerName') || ''
-    const orderId = searchParams.get('orderId') || ''
-    const status = searchParams.get('status') || ''
+    const customerName = searchParams.get('customerName')
+    const orderId = searchParams.get('orderId')
+    const status = searchParams.get('status')
 
-    const filteredOrders = orders
+    let filteredOrders = orders
 
     if (customerName) {
-      filteredOrders.filter((order) =>
+      filteredOrders = filteredOrders.filter((order) =>
         order.customerName.includes(customerName),
       )
     }
 
     if (orderId) {
-      filteredOrders.filter((order) => order.orderId.includes(orderId))
+      filteredOrders = filteredOrders.filter((order) =>
+        order.orderId.includes(orderId),
+      )
     }
 
     if (status) {
-      filteredOrders.filter((order) => order.status === status)
+      filteredOrders = filteredOrders.filter((order) => order.status === status)
     }
 
     const paginatedOrders = filteredOrders.slice(
